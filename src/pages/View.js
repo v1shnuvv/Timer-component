@@ -1,4 +1,4 @@
-import Timer from "./Timer";
+import Timer from "../components/Timer";
 const deadline1 = "december,31,2022";
 
 //sample

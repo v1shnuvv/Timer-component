@@ -1,0 +1,14 @@
+.provideredit_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+}
+.provideredit_list button{
+    margin-right: 8px;
+    border: none;
+    padding: 5px;
+}
+.provideredit_collapsible_content{
+    background-color: aquamarine;
+}

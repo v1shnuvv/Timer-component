@@ -1,4 +1,4 @@
-import "./Timer.css";
+import "../styles/Timer.css";
 import { useEffect, useState} from "react";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
