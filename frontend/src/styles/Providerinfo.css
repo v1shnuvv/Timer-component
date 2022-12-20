@@ -1,0 +1,10 @@
+.providerinfo_container{
+    background-color: #020223;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 0px;
+}
+.providerinfo_header{
+    padding: 10px;
+    color: goldenrod;
+}

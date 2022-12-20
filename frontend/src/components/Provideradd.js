@@ -2,6 +2,10 @@ import { useState } from "react";
 import Collapsible from "react-collapsible";
 import Input from "./Input";
 import axios from "axios";
+import "../styles/Provideradd.css"
+
+//install react-collapsible before using this component
+//npm i react-collapsible
 
 export default function Provideradd() {
   const [providername, setProvidername] = useState("");
@@ -87,7 +91,7 @@ export default function Provideradd() {
               }}
             />
           </div>
-          <div><button onClick={(e)=>{handleAddprovider(e)}}>Add</button></div>
+          <div className="provideradd_button"><button onClick={(e)=>{handleAddprovider(e)}}>Add</button></div>
         </Collapsible>
       </div>
     </>

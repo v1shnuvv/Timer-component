@@ -7,6 +7,9 @@ import Input from "./Input";
 import { useEffect } from "react";
 import axios from "axios";
 
+//install collapsible-react-component before using this component
+//npm i collapsible-react-component
+
 export default function Provideredit() {
   const [open, setOpen] = useState(false);
 
@@ -18,6 +21,10 @@ export default function Provideredit() {
   const [providereditcity, setProvidereditcity] = useState("");
 
   const [providerarray, setProviderarray] = useState([]);
+ 
+  
+
+
 
   useEffect(() => {
     let url2 = "http://localhost:8000/viewprovider";
@@ -59,15 +66,15 @@ export default function Provideredit() {
                   <h2>Edit provider</h2>
                   <div className="provideredit_input">
                     <Input
-                      name="Provider Name"
+                      name="Provider Name" value={itm.txtProvidername}
                       onChange={(e) => {
-                        setProvidereditname(e.target.value);
+                        setProvidereditname(e.target.value) ;
                       }}
                     />
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="Email"
+                      name="Email" value={itm.txtEmail}
                       onChange={(e) => {
                         setProvidereditemail(e.target.value);
                       }}
@@ -75,7 +82,7 @@ export default function Provideredit() {
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="Mobile number"
+                      name="Mobile number" value={itm.txtContactnumber}
                       onChange={(e) => {
                         setProvidereditnumber(e.target.value);
                       }}
@@ -83,7 +90,7 @@ export default function Provideredit() {
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="Address"
+                      name="Address" value={itm.txtRegisteredaddress}
                       onChange={(e) => {
                         setProvidereditaddress(e.target.value);
                       }}
@@ -91,7 +98,7 @@ export default function Provideredit() {
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="Zip code"
+                      name="Zip code" value={itm.txtZipcode}
                       onChange={(e) => {
                         setProvidereditzip(e.target.value);
                       }}
@@ -99,15 +106,16 @@ export default function Provideredit() {
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="City"
+                      name="City" value={itm.refCity}
                       onChange={(e) => {
                         setProvidereditcity(e.target.value);
                       }}
                     />
                   </div>
 
-                  <div>
-                    <button>Update</button>
+                  <div className="provideredit_button">
+                    <button onClick={e=>
+                    {}}>Update</button>
                   </div>
                 </Collapsible>
               </div>
