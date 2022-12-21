@@ -13,7 +13,7 @@ import axios from "axios";
 export default function Provideredit() {
   const [open, setOpen] = useState(false);
 
-  const [providereditname, setProvidereditname] = useState("");
+  const [providereditname, setProvidereditname] = useState([]);
   const [providereditemail, setProvidereditemail] = useState("");
   const [providereditnumber, setProvidereditnumber] = useState("");
   const [providereditaddress, setProvidereditaddress] = useState("");
@@ -34,6 +34,7 @@ export default function Provideredit() {
       .post(url2, req2, header2)
       .then((res) => {
         setProviderarray(res.data);
+        setProvidereditname(res.data.txtProvidername)
         console.log(res.data);
       })
       .catch();
@@ -66,15 +67,15 @@ export default function Provideredit() {
                   <h2>Edit provider</h2>
                   <div className="provideredit_input">
                     <Input
-                      name="Provider Name" value={itm.txtProvidername}
+                      name="Provider Name" value={providereditname}
                       onChange={(e) => {
-                        setProvidereditname(e.target.value) ;
+                        setProvidereditname(e.target.value);
                       }}
                     />
                   </div>
                   <div className="provideredit_input">
                     <Input
-                      name="Email" value={itm.txtEmail}
+                      name="Email" valuex={itm.txtEmail}
                       onChange={(e) => {
                         setProvidereditemail(e.target.value);
                       }}

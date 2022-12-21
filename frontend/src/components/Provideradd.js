@@ -3,6 +3,7 @@ import Collapsible from "react-collapsible";
 import Input from "./Input";
 import axios from "axios";
 import "../styles/Provideradd.css"
+import {MdArrowDropDownCircle} from "react-icons/md"
 
 //install react-collapsible before using this component
 //npm i react-collapsible
@@ -39,7 +40,7 @@ export default function Provideradd() {
         
         <Collapsible
           trigger={<div>
-          <h2>Add new provider</h2>
+          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h2>Add new provider</h2></div>
         </div>}
         >
           

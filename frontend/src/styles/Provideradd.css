@@ -2,8 +2,17 @@
     padding: 10px;
     background-color: #020223;
 }
-.provideradd_container h2{
-    color: goldenrod;
+.provideradd_header{
+    /* color: goldenrod; */
+    display: flex;
+    align-items: center;
+    
+    /* justify-content: center; */
+}
+.provideradd_header span{
+    font-size: 24px;
+    margin-right: 5px;
+    padding-top: 3px;
 }
 .provideradd_button button{
 padding: 10px;
@@ -16,4 +25,8 @@ color: white;
 .provideradd_button button:hover{
     background-color: rgba(218, 165, 32, 0.774);
     cursor: pointer;
+}
+.hk{
+    font-size: 50px;
+    color: bisque;
 }
