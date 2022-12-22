@@ -30,6 +30,7 @@ export default function Provideradd() {
     axios.post(url, req, header).then((res)=>{
       console.log(res.data)
     }).catch();
+    window.location.reload()
   }
 
 

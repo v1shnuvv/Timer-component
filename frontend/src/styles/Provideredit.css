@@ -5,7 +5,7 @@
     background-color: #020223;
     padding:  5px 10px;
 }
-.provideredit_list button{
+.provideredit_list  button{
     margin-right: 8px;
     border: none;
     padding: 5px;
@@ -26,3 +26,13 @@
         background-color: rgba(218, 165, 32, 0.774);
         cursor: pointer;
     }
+.provideredit_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.provideredit_header{
+    margin-right: 28px;
+    border: none;
+    padding: 5px;  
+}
