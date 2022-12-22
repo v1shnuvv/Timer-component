@@ -8,8 +8,7 @@ import {MdArrowDropDownCircle} from "react-icons/md"
 //install react-collapsible before using this component
 //npm i react-collapsible
 
-export default function Provideradd() {
-  const [providername, setProvidername] = useState("");
+export default function Provideradd({providername, setProvidername}) {
   const [provideremail, setProvideremail] = useState("");
   const [providermobile, setProvidermobile] = useState("");
   const [provideraddress, setProvideraddress] = useState("");
@@ -30,7 +29,7 @@ export default function Provideradd() {
     axios.post(url, req, header).then((res)=>{
       console.log(res.data)
     }).catch();
-    window.location.reload()
+    window.location.reload();
   }
 
 
@@ -41,10 +40,10 @@ export default function Provideradd() {
         
         <Collapsible
           trigger={<div>
-          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h2>Add new provider</h2></div>
+          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h3>Add new provider</h3></div>
         </div>}
         >
-          
+          <div className="provideradd_grid">
           <div className="provideradd_input">
             <Input
               name="Provider Name"
@@ -92,6 +91,7 @@ export default function Provideradd() {
                 setProvidercity(e.target.value);
               }}
             />
+          </div>
           </div>
           <div className="provideradd_button"><button onClick={(e)=>{handleAddprovider(e)}}>Add</button></div>
         </Collapsible>

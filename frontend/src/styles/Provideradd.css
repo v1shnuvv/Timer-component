@@ -10,14 +10,18 @@
     /* justify-content: center; */
 }
 .provideradd_header span{
-    font-size: 24px;
+    font-size: 20px;
     margin-right: 5px;
     padding-top: 3px;
+}
+.provideradd_button{
+    display: flex;
+    justify-content: center;
 }
 .provideradd_button button{
 padding: 10px;
 margin-top: 15px;
-width: 100%;
+width: 216px;
 border-radius: 5px;
 background-color: goldenrod;
 color: white;
@@ -26,7 +30,9 @@ color: white;
     background-color: rgba(218, 165, 32, 0.774);
     cursor: pointer;
 }
-.hk{
-    font-size: 50px;
-    color: bisque;
+
+.provideradd_grid{
+    display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) ;
 }
