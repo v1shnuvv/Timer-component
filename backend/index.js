@@ -1,7 +1,5 @@
 
 /// provider add api
-
-
 app.post("/addprovider", (req, res) => {
   let providername = req.body.providername;
   let provideremail = req.body.provideremail;
@@ -19,7 +17,6 @@ app.post("/addprovider", (req, res) => {
 });
 
 //provideredit
-
 app.post("/viewprovider", (req, res)=>{
   var sql = "SELECT id, txtProvidername,txtEmail,txtContactnumber,txtRegisteredaddress,txtZipcode,refCity FROM lotterydrums.tblprovider;"
   con.query(sql, function (err, result){
@@ -27,6 +24,24 @@ app.post("/viewprovider", (req, res)=>{
     console.log(result);
     res.send(result)``
   })
+})
+
+var sql = "UPDATE tblprovider SET txtProvidername = '"+providereditname+"', txtEmail = '"+providereditemail+"', txtContactnumber = '"+providereditnumber+"', txtRegisteredaddress = '"+providereditaddress+"', txtZipcode = '"+providereditzip+"', refCity = '"+providereditcity+"' WHERE id='"+providereditid+"';"
+con.query(sql, function (err, result){
+  if (err) throw err;
+  console.log(result)
+  res.send(result)
+})
+
+
+app.post("/deleteprovider", (req, res)=>{
+let providereditid =req.body.providereditid;
+var sql = "DELETE FROM tblprovider WHERE id='"+providereditid+"';"
+con.query(sql, function (err, result){
+  if (err) throw err;
+  console.log(result)
+  res.send(result)
+})
 })
 
 
