@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './pages/Providerpage';
+import App from './components/Uservalidationfetch';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
