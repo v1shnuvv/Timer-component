@@ -45,22 +45,22 @@ con.query(sql, function (err, result){
 })
 
 app.post("/latestdrawunits", (req, res)=>{
-  var sql = "SELECT txtLotteryname, DATE_FORMAT(dtLotterydrawdate, '%d %b %Y') AS dtLotterydrawdate, txtLotteryprize, txtFirstchoicenumber, txtSecondchoicenumber, txtThirdchoicenumber, txtFourthchoicenumber, txtFifthoicenumber, txtFname, txtLname FROM lotterydrums.tbllotterymaster join tblunit on tbllotterymaster.id = tblunit.refLotterymaster join tblusers on tblunit.refUser = tblusers.id where dtLotterydrawdate = ( select dtLotterydrawdate from tbllotterymaster where dtLotterydrawdate < now() order by dtLotterydrawdate desc limit 1)"
+  var sql = "SELECT txtFname, txtLname, txtMatchingcount, txtPrizemoney, txtLotteryname, DATE_FORMAT(dtLotterydrawdate, '%d %b %Y') AS dtLotterydrawdate FROM lotterydrums.tblresultmap join tblunit on tblresultmap.refUnitid = tblunit.id join tblusers on tblunit.refUser = tblusers.id  join tbllotterymaster on tblunit.refLotterymaster = tbllotterymaster.id where txtMatchingcount != 0 && dtLotterydrawdate = ( select dtLotterydrawdate from tbllotterymaster where dtLotterydrawdate < now() order by dtLotterydrawdate desc limit 1)"
   con.query(sql, function (err, result){
     if (err) throw err;
     console.log(result)
     res.send(result)
   })
-})
+}) // Uservalidationfetch
 
-app.post("/latestresultchoicenumber", (req, res)=>{
-var sql = "select txtLotteryname, DATE_FORMAT(dtLotterydrawdate, '%d %b %Y') AS dtLotterydrawdate, txtFirstchoicenumber, txtSecondchoicenumber, txtThirdchoicenumber, txtFourthchoicenumber, txtFifthoicenumber from tbllotterymaster join tblresultmaster on tbllotterymaster.id = tblresultmaster.refLotterymaster where dtLotterydrawdate < now() order by dtLotterydrawdate desc limit 1"
-  con.query(sql, function (err, result){
-    if (err) throw err;
-    console.log(result)
-    res.send(result)
-  })
-})
+// app.post("/latestresultchoicenumber", (req, res)=>{
+// var sql = "select txtLotteryname, DATE_FORMAT(dtLotterydrawdate, '%d %b %Y') AS dtLotterydrawdate, txtFirstchoicenumber, txtSecondchoicenumber, txtThirdchoicenumber, txtFourthchoicenumber, txtFifthoicenumber from tbllotterymaster join tblresultmaster on tbllotterymaster.id = tblresultmaster.refLotterymaster where dtLotterydrawdate < now() order by dtLotterydrawdate desc limit 1"
+//   con.query(sql, function (err, result){
+//     if (err) throw err;
+//     console.log(result)
+//     res.send(result)
+//   })
+// })
 
 
 
