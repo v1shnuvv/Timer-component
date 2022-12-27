@@ -35,9 +35,10 @@ export default function Timer({ deadline }) {
           <label>Grand lottery</label>
         </div>
         <div className="timer_lotteryprice">
-          <label>Grand draw</label>
+         <div><label>Grand draw</label>
           <br />
-          <label>INR 100000</label>
+          <label>INR 100000</label></div> 
+          <div><button>Buy now</button></div>
         </div>
         <div className="timer_lottery_countdown_sec">
           <div className="timer_lotterydraw_date">

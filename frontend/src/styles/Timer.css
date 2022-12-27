@@ -23,6 +23,22 @@ body {
   border-radius: 10px;
   margin-bottom: 10px;
   font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.timer_lotteryprice button{
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #171739;
+  border-style: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.timer_lotteryprice button:hover{
+  background-color: goldenrod;
 }
 .timer_lottery_countdown_sec {
   display: flex;
