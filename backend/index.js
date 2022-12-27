@@ -26,11 +26,20 @@ app.post("/viewprovider", (req, res)=>{
   })
 })
 
+app.post("/editprovider", (req, res)=>{
+  let providereditid =req.body.providereditid;
+  let providereditname = req.body.providereditname;
+  let providereditemail = req.body.providereditemail;
+  let providereditnumber = req.body.providereditnumber;
+  let providereditaddress = req.body.providereditaddress;
+  let providereditzip = req.body.providereditzip;
+  let providereditcity = req.body.providereditcity;
 var sql = "UPDATE tblprovider SET txtProvidername = '"+providereditname+"', txtEmail = '"+providereditemail+"', txtContactnumber = '"+providereditnumber+"', txtRegisteredaddress = '"+providereditaddress+"', txtZipcode = '"+providereditzip+"', refCity = '"+providereditcity+"' WHERE id='"+providereditid+"';"
 con.query(sql, function (err, result){
   if (err) throw err;
   console.log(result)
   res.send(result)
+})
 })
 
 

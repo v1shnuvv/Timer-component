@@ -7,7 +7,9 @@
     border-radius: 10px;
     font-family: sans-serif;
 }
-.uservalidationfetch_innercontainer h2{
+.uservalidationfetch_innercontainer1 h2{
 margin-left: 5px;
-
+}
+.uservalidationfetch_innercontainerspan{
+    color: goldenrod;
 }
