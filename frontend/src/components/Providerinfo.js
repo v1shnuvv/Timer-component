@@ -5,14 +5,14 @@ import Collapsible from "react-collapsible";
 import {MdArrowDropDownCircle} from "react-icons/md"
 import { useState } from "react";
 
-export default function Providerinfo({providername, setProvidername, providerarray, setProviderarray}){
+export default function Providerinfo(){
     return(
         <><div className="providerinfo_container">
-        <div className="providerinfo_header"><h2>Provider info</h2></div>
-        <Collapsible trigger={<div className="providerinfo_subheader"><span><MdArrowDropDownCircle/></span><h3>Provider list</h3></div> }>
-        <Provideredit providerarray={providerarray} setProviderarray={setProviderarray}/>
+        <Collapsible trigger={<div className="providerinfo_header"><span><MdArrowDropDownCircle/></span><h4>Provider info</h4></div>}>
+        <Collapsible trigger={<div className="providerinfo_subheader"><span><MdArrowDropDownCircle/></span><h4>Provider list</h4></div> }>
+        <Provideredit/>
         </Collapsible>
-        <Provideradd providername={providername}  setProvidername={setProvidername}/>
+        <Provideradd/></Collapsible>
         </div>
         </>
     )

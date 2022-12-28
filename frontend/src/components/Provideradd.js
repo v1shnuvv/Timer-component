@@ -8,7 +8,8 @@ import {MdArrowDropDownCircle} from "react-icons/md"
 //install react-collapsible before using this component
 //npm i react-collapsible
 
-export default function Provideradd({providername, setProvidername}) {
+export default function Provideradd() {
+  const [providername, setProvidername] = useState("");
   const [provideremail, setProvideremail] = useState("");
   const [providermobile, setProvidermobile] = useState("");
   const [provideraddress, setProvideraddress] = useState("");
@@ -40,7 +41,7 @@ export default function Provideradd({providername, setProvidername}) {
         
         <Collapsible
           trigger={<div>
-          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h3>Add new provider</h3></div>
+          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h4>Add new provider</h4></div>
         </div>}
         >
           <div className="provideradd_grid">

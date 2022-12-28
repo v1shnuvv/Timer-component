@@ -10,7 +10,7 @@ import axios from "axios";
 //install collapsible-react-component before using this component
 //npm i collapsible-react-component
 
-export default function Provideredit({providerarray, setProviderarray}) {
+export default function Provideredit() {
 
   const [open, setOpen] = useState(false);
   const [providereditid, setProvidereditid] = useState("");
@@ -20,6 +20,7 @@ export default function Provideredit({providerarray, setProviderarray}) {
   const [providereditaddress, setProvidereditaddress] = useState("");
   const [providereditzip, setProvidereditzip] = useState("");
   const [providereditcity, setProvidereditcity] = useState("");
+  const [providerarray, setProviderarray] = useState([]);
 
   function expandCol(itm, indx) {
     let temp = [...providerarray];
