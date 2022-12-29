@@ -71,6 +71,25 @@ app.post("/latestdrawunits", (req, res)=>{
 //   })
 // })
 
+app.post("/totalwinnigtodate", (req, res) => {
+  var sql =
+    "SELECT txtProvidername, txtLotteryname, refProvider, sum(txtPrizemoney) as totalPrizemoney FROM lotterydrums.tblresultmap join tblunit on tblresultmap.refUnitid = tblunit.id join tbllotterymaster on tblunit.refLotterymaster = tbllotterymaster.id join tblprovider on tbllotterymaster.refProvider = tblprovider.id group by refProvider ";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+}); 
+// API for Totalwinningvalidation COMPONENT
 
+app.post("/totallotterywinnigtodate", (req, res) => {
+  var sql = "SELECT txtProvidername, txtLotteryname, txtPrizemoney, refProvider, sum(txtPrizemoney) AS totalPrizemoney FROM lotterydrums.tblresultmap join tblunit on tblresultmap.refUnitid = tblunit.id join tbllotterymaster on tblunit.refLotterymaster = tbllotterymaster.id join tblprovider on tbllotterymaster.refProvider = tblprovider.id group by txtLotteryname order by refProvider asc";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+});
+//API for Totalwinningvalidation COMPONENT
 
 
