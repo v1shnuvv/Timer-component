@@ -12,7 +12,7 @@ import axios from "axios";
 
 export default function Provideredit() {
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [providereditid, setProvidereditid] = useState("");
   const [providereditname, setProvidereditname] = useState("");
   const [providereditemail, setProvidereditemail] = useState("");
@@ -94,6 +94,7 @@ export default function Provideredit() {
       })
       .catch();
   }, []);
+
 
   return (
     <>

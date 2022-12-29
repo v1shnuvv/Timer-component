@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './components/Providerinfo';
+import App from './components/Totalwinningvalidation';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
