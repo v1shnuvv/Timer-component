@@ -10,14 +10,7 @@ export default function Drawresult() {
   const [lotteryresult, setLotteryresult] = useState([]);
   const [latestlotteryresult, setLatestLotteryresult] = useState([]);
   const [latestDrawNum, setLatestDrawNum] = useState([]);
-  const [matchinNum, setMatchingNum] = useState([{}]);
-  const [drawResultDate, setDrawResultDate] = useState("")
-
-
-  console.log("lotteryresult", lotteryresult);
-  console.log("latestlotteryresult", latestlotteryresult);
-  console.log("new", latestDrawNum);
-  console.log("matnum", matchinNum);
+  const [matchinNum, setMatchingNum] = useState([]);
 
   useEffect(() => {
     let url = "http://localhost:8000/upcominglotterydraws";
@@ -52,16 +45,18 @@ export default function Drawresult() {
       .then((res) => {
         var temp = [...res.data];
         let result = temp.map((a) => a.txtMatchingcount);
-        for (const element of result) {
-          if (matchinNum[element]) {
-            matchinNum[element] += 1;
-          } else {
-            matchinNum[element] = 1;
-          }
+        const counts = {};
+        for (const iterator of result) {
+          if (counts[iterator] == undefined) counts[iterator] = 1;
+          else counts[iterator]++;
         }
-        console.log(result);
+        const newobj = Object.entries(counts).map(([key, value]) => ({
+          key,
+          value,
+        }));
+        setMatchingNum(newobj);
       })
-      
+
       .catch();
   }, []);
 
@@ -79,7 +74,7 @@ export default function Drawresult() {
           <div className="drawres_body_sec_lft">
             <div className="drawres_body_sec_lft_content">
               <div className="drawres_body_sec_header">
-                <h1>Upcoming Lottery Draws</h1>
+                <h2>Upcoming Lottery Draws</h2>
               </div>
 
               <div className="drawres_body_lft_row">
@@ -105,7 +100,12 @@ export default function Drawresult() {
           <div className="drawres_body_sec_rgt">
             <div className="drawres_body_sec_rgt_content">
               <div className="drawres_body_sec_header">
-                <h1>Latest Grand Draw Results </h1>
+                <h2>Latest Grand Draw Results </h2>
+                <label>
+                  {latestlotteryresult[0] != undefined
+                    ? latestlotteryresult[0].Lotterydrawdate
+                    : ""}
+                </label>
               </div>
 
               <div className="drawres_body_sec_rgt_num">
@@ -121,12 +121,14 @@ export default function Drawresult() {
               <div className="drawers_body_sec_rgt_row">
                 <div className="drawres_sec_rgt_row_div">
                   {matchinNum.map((item, index) => {
-                    <div className="drawres_sec_rgt_row_inner_div">
-                      <p>
-                        Matching {item}/{latestDrawNum.length}
-                      </p>
-                      <p>1 Winners</p>
-                    </div>;
+                    return (
+                      <div className="drawres_sec_rgt_row_inner_div">
+                        <p>
+                          Matching {item.key}/{latestDrawNum.length}
+                        </p>
+                        <p>{item.value} Winners</p>
+                      </div>
+                    );
                   })}
                 </div>
 

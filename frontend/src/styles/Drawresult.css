@@ -90,17 +90,10 @@ body{
     border-radius: 5px; 
 }
 
-/* .drawres_sec_lft_row_inner_div::after{
-    content: "";
-    background-color: white;
-    width: 2px;
-    left: 50%;
-    position: absolute;
-    
-} */
 .drawres_body_sec_rgt_num{
     display: flex;
     margin-bottom: 20px;
+    margin-top:20px
 }
 
 .drawres_rgt_numbers_div{
