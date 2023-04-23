@@ -1,5 +1,5 @@
 import Timer from "../components/Timer";
-const deadline1 = "2022-12-31";
+const deadline1 = "2023-04-30";
 
 //sample
 

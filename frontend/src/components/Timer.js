@@ -32,7 +32,7 @@ export default function Timer({ deadline }) {
     <>
       <div className="timer_container">
         <div className="timer_lotteryname">
-          <label>Grand lottery</label>
+          <label>Timer</label>
         </div>
         <div className="timer_lotteryprice">
          <div><label>Grand draw</label>
